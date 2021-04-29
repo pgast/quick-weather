@@ -1,7 +1,7 @@
 # QuickWeather
 ![GitHub last commit](https://img.shields.io/github/last-commit/pgast/quick-weather)
 
-• React application that fetches a 5 day forecast for your current location.\
+• React application that fetches a 5 day forecast for your current location.
 
 [**Try it now!**](http://quick-weather.surge.sh/)  
 
