@@ -1,0 +1,52 @@
+.temperatureCheckbox {
+  background: rgb(240, 240, 240);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  border-radius: 9px;
+  margin: 0 0.7rem;
+  margin-bottom: 1.2rem;
+}
+
+.temperatureCheckbox:hover {
+  -webkit-animation: shadow-drop-bottom 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: shadow-drop-bottom 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.unitBtn {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.unitBtn:hover {
+  color: #f6521e;
+}
+
+.unitBtn--selected:hover {
+  color:white;
+}
+
+.unitBtn--selected {
+  background: #422dc5;
+  color: white;}
+
+.temperatureCheckbox .unitBtn:first-of-type {
+  border-top-left-radius: 9px;
+  border-bottom-left-radius: 9px;
+}
+
+.temperatureCheckbox .unitBtn:last-of-type {
+  border-top-right-radius: 9px;
+  border-bottom-right-radius: 9px;
+}
+
+/* MOBILE */
+@media screen and (max-width: 680px) {
+  .temperatureCheckbox {
+    margin-bottom: 0.7rem;
+  }
+}

@@ -1,0 +1,86 @@
+.barChart {
+  background: #f9ca1c;
+  border-radius: 17px;
+  margin: 0 0.7rem;
+  margin-top: 1.3rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 0.8rem;
+  padding-top: 0.8rem;
+  color: black;
+}
+
+.barChart > h4 {
+  margin-bottom: 0.4rem;
+}
+
+.barChart:hover {
+  -webkit-animation: shadow-drop-bottom 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: shadow-drop-bottom 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.hourlyTempsRow {
+  display: flex;
+  justify-content: center;
+}
+
+.hourlyTempsRow .hourlyForecast:first-of-type {
+  border-left: none;
+}
+
+.hourlyForecast {
+  border-left: 1px solid #bb9200;
+  width: 4rem;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.4rem;
+}
+
+.hourlyForecast h4 {
+  margin: 0px;
+  font-size: 0.8rem;
+}
+
+.hourlyForecast h4:first-of-type {
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+.hourlyForecast h4:last-of-type {
+  font-weight: 500;
+}
+
+/* MOBILE */
+@media screen and (max-width: 680px) {
+  .hourlyTempsRow {
+    flex-direction: column;
+    width: 50%;
+  }
+
+  .hourlyForecast {
+    border-bottom: 1px solid #bb9200;
+    border-left: none;
+    width: 100%;
+    height: 2rem;
+    flex-direction: row;
+    justify-items: center;
+    padding: 0px;
+  }
+
+  .hourlyTempsRow .hourlyForecast:last-of-type {
+    border-bottom: none;
+  }
+
+  .hourlyForecast h4:first-of-type {
+    margin-bottom: 0;
+    margin-right: 1rem;
+  }
+
+  .barChart {
+    margin-bottom: 0.7rem;
+  }
+}

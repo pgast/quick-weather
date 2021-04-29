@@ -1,0 +1,42 @@
+.loadingView {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #422dc5;
+}
+
+.loadingView h4 {
+  font-size: 2rem;
+}
+
+.rotate {
+  animation: rotation 2s;
+  font-size: 6rem;
+  margin-bottom: 3rem;
+}
+
+.linear {
+  animation-timing-function: linear;
+}
+
+.infinite {
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+/* MOBILE */
+@media screen and (max-width: 680px) {
+  .loadingView {
+    height: 100vh;
+    text-align: center;
+  }
+}

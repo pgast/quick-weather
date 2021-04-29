@@ -1,0 +1,48 @@
+.weatherCards {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttonRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0.7rem;
+  margin-bottom: 1.2rem;
+}
+
+.btn {
+  font-weight: 500;
+  border-radius: 9px;
+  background: rgb(240, 240, 240);
+  color: black;
+  width: 8rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  justify-content: space-between;
+}
+
+.btn:hover {
+  background: #422dc5;
+  color: white;
+  -webkit-animation: shadow-drop-bottom 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: shadow-drop-bottom 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.cardsRow {
+  display: flex;
+}
+
+/* MOBILE */
+@media screen and (max-width: 680px) {
+  .btn {
+    width: 7.6rem;
+    padding: 0 0.6rem;
+  }
+
+  .cardsRow {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}

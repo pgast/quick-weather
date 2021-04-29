@@ -1,0 +1,139 @@
+.card {
+  height: 13rem;
+  width: 13rem;
+  margin: 0 .7rem;
+  border-radius: 17px;
+  background: rgb(240, 240, 240);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly; 
+  align-items: center;
+}
+
+.card h4 {
+  margin: 0px;
+}
+
+.mainInfo {
+  display: flex;
+  width: 80%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.highlight > h4:first-of-type {
+  font-size: 2.4rem;
+}
+
+.mainInfo > div:last-of-type {
+  height: 100%;
+  display: flex;
+  width: 100%;
+  padding-right: 10px;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 2rem;
+}
+
+.dayDate {
+  border-top: 2px solid black;
+  width: 80%;
+  padding-top: 4px;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.tempRows {
+  display: flex;
+  width: 80%;
+  align-items: center;
+  margin-top: 0.6rem;
+  justify-content: space-between;
+}
+
+.tempVal {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.tempVal h4:last-of-type {
+  font-weight: 500;
+}
+
+.tempVal h4:first-of-type {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.card--selected {
+  background: #f6521e;
+  color: white;
+  -webkit-animation: shadow-drop-bottom 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: shadow-drop-bottom 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.card--selected .dayDate {
+  border-top: 2px solid white;
+}
+
+ @-webkit-keyframes shadow-drop-bottom {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+  100% {
+    -webkit-box-shadow: 0 12px 20px -12px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 12px 20px -12px rgba(0, 0, 0, 0.5);
+  }
+}
+@keyframes shadow-drop-bottom {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+  100% {
+    -webkit-box-shadow: 0 12px 20px -12px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 12px 20px -12px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* MOBILE */
+@media screen and (max-width: 680px) {
+  .card {
+    width: 30%;
+    margin: 0 0.4rem;
+  }
+
+  .dayDate {
+    width: 80%;
+    font-size: 1.2rem;
+  }
+
+  .highlight > h4:first-of-type {
+    font-size: 1.7rem;
+  }
+
+  .mainInfo {
+    flex-direction: column-reverse;
+  }
+
+  .mainInfo > div:last-of-type {
+    padding-right: 0px;
+    margin-bottom: 0.4rem;
+    justify-content: center;
+  }
+
+  .highlight {
+    text-align: center;
+  }
+
+  .tempVal {
+    font-size: 0.7rem;
+  }
+  
+  .tempVal h4:first-of-type {
+    font-size: 0.8rem;
+  }
+}
