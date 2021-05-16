@@ -73,3 +73,11 @@ export const toggleCards = (state, payload) => {
     cardIndex: newCardIndex,
   }
 }
+
+// SET LOADING
+export const setLoading = (state) => {
+  return {
+    ...state,
+    isLoading: false,
+  }
+}

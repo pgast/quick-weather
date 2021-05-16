@@ -1,3 +1,4 @@
+export const SET_LOADING = "SET_LOADING";
 export const TOGGLE_UNITS = "TOGGLE_UNITS";
 export const TOGGLE_CARDS = "TOGGLE_CARDS";
 export const UPDATE_FORECASTS = "UPDATE_FORECASTS";

@@ -6,6 +6,24 @@
   justify-items: center;
 }
 
+.ErrorView {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  font-weight: 600;
+  background: rgb(240, 240, 240);
+  height: 100vh;
+  width: 100vw;
+}
+
+.ErrorView h4 {
+  font-size: 2rem;
+  color: #f6521e;
+  margin-bottom: 1.5rem;
+}
+
 /* MOBILE */
 @media screen and (max-width: 680px) {
   .App {
