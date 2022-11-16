@@ -50,8 +50,9 @@ const App = ({ updateForecastsDispatch, setLoading, isLoading }) => {
 
   function getWeatherData() {
     var appId = "061f24cf3cde2f60644a8240302983f2";
+    const getIp = "http://ip-api.com/json/"
 
-    fetch("http://ip-api.com/json/").then(function(response) {
+    fetch(getIp).then(function(response) {
       if (response.ok) return response.json();
       return Promise.reject(response);
     }).then(function (data) {
