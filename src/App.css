@@ -24,6 +24,11 @@
   margin-bottom: 1.5rem;
 }
 
+.buttonRow:hover,
+h4:hover {
+  cursor: default;
+}
+
 /* MOBILE */
 @media screen and (max-width: 680px) {
   .App {

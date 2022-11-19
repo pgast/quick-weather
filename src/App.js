@@ -45,44 +45,52 @@ function formatWeatherData(fetchedData) {
   }
 }
 
+let getLocationPromise = () => {
+  return new Promise(function (resolve, reject) {
+      navigator.geolocation.getCurrentPosition(resolve, reject);
+  });
+};
+
+const appId = '061f24cf3cde2f60644a8240302983f2';
+const url = (crds) => `https://api.openweathermap.org/data/2.5/forecast?lat=${crds.latitude}&lon=${crds.longitude}&appid=${appId}&units=metric`
+
+
 const App = ({ updateForecastsDispatch, setLoading, isLoading }) => {
   const [error, setError] = useState(false); 
 
   function getWeatherData() {
-    var appId = "061f24cf3cde2f60644a8240302983f2";
-    const getIp = "http://ip-api.com/json/"
-
-    fetch(getIp).then(function(response) {
-      if (response.ok) return response.json();
-      return Promise.reject(response);
-    }).then(function (data) {
-      return fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${data.city},${data.countryCode.toLowerCase()}&units=metric&APPID=${appId}`);
-    }).then(function (response) {
-      if (response.ok) return response.json();
-      return Promise.reject(response);
-    }).then(function (userData) {
-      updateForecastsDispatch(formatWeatherData(userData));
-      setLoading();
-    }).catch(function (error) {
-      setError(true);
-      setLoading();
-    });
+    getLocationPromise()
+      .then((res) => res.coords)
+      .then(crds => fetch(url(crds)))
+      .then(response => {
+        if (response.ok) return response.json()
+      })
+      .then(userData => {
+        updateForecastsDispatch(formatWeatherData(userData));
+        setLoading();
+      })
+      .catch((error) => {
+        setError(true);
+        setLoading();
+      });
   }
 
   function renderView() {
-    if(isLoading && !error) return <LoadingView />;
+    if (isLoading && !error) return <LoadingView />;
 
-    if(error) {
-      return <div className="ErrorView">
+    if (error) return (
+      <div className="ErrorView">
         <h4>Something went wrong</h4>
         <p>We are unable to get data at the moment, check your internet connection</p>
       </div>
-    } else {
-      return <WeatherInfoScreen />
-    }
+    )
+
+    return <WeatherInfoScreen />
   }
 
-  useEffect(() => { getWeatherData() }, []);
+  useEffect(() => { 
+    getWeatherData() 
+  }, []);
 
   return (
     <div className="App">
@@ -99,9 +107,7 @@ const mapDispatchToProps = dispatch => {
 };
 
 const mapStateToProps = state => {
-  return { 
-    isLoading: state.isLoading
-   };
+  return { isLoading: state.isLoading };
 };
  
 export default connect(mapStateToProps, mapDispatchToProps)(App);
