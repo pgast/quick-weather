@@ -81,7 +81,7 @@ const App = ({ updateForecastsDispatch, setLoading, isLoading }) => {
     if (error) return (
       <div className="ErrorView">
         <h4>Something went wrong</h4>
-        <p>We are unable to get data at the moment, check your internet connection</p>
+        <p>We are unable to get data at the moment, check your internet connection or enable location tracking on the browser</p>
       </div>
     )
 
