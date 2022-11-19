@@ -51,8 +51,7 @@ let getLocationPromise = () => {
   });
 };
 
-const appId = '061f24cf3cde2f60644a8240302983f2';
-const url = (crds) => `https://api.openweathermap.org/data/2.5/forecast?lat=${crds.latitude}&lon=${crds.longitude}&appid=${appId}&units=metric`
+const url = (crds) => `https://api.openweathermap.org/data/2.5/forecast?lat=${crds.latitude}&lon=${crds.longitude}&appid=${process.env.REACT_APP_APP_ID}&units=metric`
 
 
 const App = ({ updateForecastsDispatch, setLoading, isLoading }) => {
